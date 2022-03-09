@@ -1,6 +1,3 @@
-variable "AWS_ACCESS_KEY_ID" {}
-variable "AWS_SECRET_ACCESS_KEY" {}
-
 provider "aws" {
     region = var.region
     access_key =  var.AWS_ACCESS_KEY_ID
@@ -11,10 +8,6 @@ provider "aws" {
 
 resource "aws_s3_bucket" "bucket1" {
   bucket = var.bucket
-  acl = "public-read"
-  website {
-      index_document = "index.html"
-  }
 }
 
 /*------------content------------*/
